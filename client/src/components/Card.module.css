@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 200px;
+    border-radius: 10%;
+    word-wrap: break-word;
+    border: 1px;
+    background-color: #222222;
+    background-clip: border-box;
+    box-shadow: 1px 1px 3px #ffffff;
+}
+
+.text {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #ffffff;
+}
+
+.container img {
+    width: 90%;
+    height: 55%;
+    border: 0.5px solid var(--gris-claro);
+    border-radius: 10%;
+    filter: brightness(110%);
+    margin-top: 0px;
+}
