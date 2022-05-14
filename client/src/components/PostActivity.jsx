@@ -69,17 +69,25 @@ export default function PostActivity() {
     function handleSubmit(e) {
         //console.log('evento: ', e);
         e.preventDefault();
-
-        dispatch(postActivity(input));
-        setInput({
-            name: "",
-            difficulty: "",
-            duration: "",
-            season: "",
-            countryId: []
-        });
-
-    }
+        if (!input.name ||
+            !/^[A-Z]+$/i.test(input.name) ||
+            /\d/.test(input.name) ||
+            !input.difficulty ||
+            !input.duration ||
+            !input.season ||
+            input.countryId.length === 0) {
+            alert('Completar todos los campos');
+        } else {
+            dispatch(postActivity(input));
+            setInput({
+                name: "",
+                difficulty: "",
+                duration: "",
+                season: "",
+                countryId: []
+            });
+        }
+    };
 
     return (
         <div>

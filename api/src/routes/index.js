@@ -86,6 +86,22 @@ router.get('/activity', async (req, res) => {
     res.send(findActivity);
 })
 
+// DELETE /activity/:id
+router.delete('/activity/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const deleteAct = await Activity;
+
+        await deleteAct.destroy({
+            where: { id: id }
+        });
+        res.send('Actividad eliminada')
+    }
+    catch (error) {
+        res.status(404).send(error);
+    }
+});
+
 // POST /activity:
 // Recibe los datos recolectados desde el formulario controlado de la ruta de creación de actividad turística por body.
 // Crea una actividad turística en la base de datos.
