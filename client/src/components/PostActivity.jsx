@@ -32,7 +32,7 @@ export default function PostActivity() {
             setDisabled(true);
         } else {
             setDisabled(false);
-            setError('');
+            setError(''); // Magia
         }
     }, [input])
 
